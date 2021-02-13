@@ -1,0 +1,58 @@
+#include "FastLED.h"
+
+#define NUM_LEDS 144
+#define DATA_PIN 5
+//#define CLOCK_PIN 13
+
+CRGB leds[NUM_LEDS];
+
+void setup() {
+
+      FastLED.addLeds<WS2813, DATA_PIN, GRB>(leds, NUM_LEDS);
+      FastLED.setBrightness(25);
+}
+
+void loop()
+{
+
+  for(int dot = 0; dot < NUM_LEDS; dot++)
+ 
+  {
+   
+    leds[dot] = CRGB(127,0,255);
+    FastLED.show();
+   
+ 
+    leds[dot] = CRGB(127,0,255);
+   
+//    delay(100);
+  }
+
+    for(int dot = 0; dot < NUM_LEDS; dot++)
+ 
+  {
+   
+    leds[dot] = CRGB(255,128,0);
+    FastLED.show();
+   
+
+    leds[dot] = CRGB(255,128,0);
+   
+ //   delay(100);
+  }
+
+
+for(int dot = 0; dot < NUM_LEDS; dot++)
+
+  {
+   
+    leds[dot] = CRGB(0,255,0);
+    FastLED.show();
+   
+ 
+    leds[dot] = CRGB(0,255,0);
+   
+//    delay(100);
+  }
+ 
+}
